@@ -1,0 +1,22 @@
+dependencies {
+    compile(project(":lemon-common")) {
+        transitive = false
+    }
+    compile(project(":lemon-framework:lemon-framework-core")) {
+        transitive = false
+    }
+    compile("org.hibernate:hibernate-validator") {
+        exclude module: 'jboss-logging'
+        exclude module: 'classmate'
+    }
+    compile("io.github.openfeign:feign-core")
+    compile("org.springframework:spring-web") {
+        exclude module: 'spring-aop'
+        exclude module: 'spring-beans'
+        exclude module: 'spring-core'
+    }
+    compile("org.springframework.cloud:spring-cloud-netflix-core") {
+        exclude group: 'org.springframework.boot'
+    }
+    compile("io.swagger:swagger-annotations:1.5.13")
+}

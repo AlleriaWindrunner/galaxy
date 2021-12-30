@@ -1,0 +1,15 @@
+dependencies {
+    optional project(":lemon-gateway:lemon-gateway-core")
+    optional project(":lemon-gateway:lemon-gateway-zuul")
+    optional project(":lemon-framework:lemon-framework-feign")
+    optional project(":lemon-framework:lemon-framework-web")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+}

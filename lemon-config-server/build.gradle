@@ -1,0 +1,22 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	compile("org.springframework.cloud:spring-cloud-config-server")
+	compile("org.springframework.cloud:spring-cloud-starter-eureka")
+	compile("org.springframework.cloud:spring-cloud-starter-security")
+
+}
+
+jar {
+	manifest {
+		attributes(
+				"Implementation-Title": "Gradle",
+				"Implementation-Version": "${version}",
+		)
+	}
+}
+
+bootRepackage {
+	enabled = true
+	mainClass = 'com.galaxy.lemon.config.ConfigServerApplication'
+}

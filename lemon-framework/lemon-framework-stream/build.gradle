@@ -1,0 +1,8 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    optional project(":lemon-framework:lemon-framework-gray")
+
+    compile("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+}

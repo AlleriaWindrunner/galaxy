@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.redisson:redisson:3.4.4")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+}

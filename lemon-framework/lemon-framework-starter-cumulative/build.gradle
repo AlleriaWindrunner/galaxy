@@ -1,0 +1,14 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-cumulative")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

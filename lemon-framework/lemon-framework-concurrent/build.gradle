@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-common")
+    compile("org.springframework.boot:spring-boot-starter")
+
+}

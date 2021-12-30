@@ -1,0 +1,16 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-redis")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  // "Class-Path": '. config/'
+                  )
+    }
+//    exclude('config/')
+}

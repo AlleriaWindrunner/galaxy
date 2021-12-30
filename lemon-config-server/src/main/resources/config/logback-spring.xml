@@ -1,0 +1,45 @@
+<configuration>
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${lemon.log.path}/server.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${lemon.log.path}/server-%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <maxFileSize>20MB</maxFileSize>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d %-5level [%-18.18thread] %-36logger{36} - [%X{requestId:-SYSTEM}]: %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d %-5level [%-15.15thread] %-36logger{36} - [%X{requestId:-SYSTEM}]: %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+   <appender name="ERROR-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${lemon.log.path}/error.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${lemon.log.path}/error-%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <maxFileSize>20MB</maxFileSize>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d %-5level [%-18.18thread] %-36logger{36} - [%X{requestId:-SYSTEM}]: %msg%n</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+        <level>ERROR</level>  
+        <onMatch>ACCEPT</onMatch>  
+        <onMismatch>DENY</onMismatch>  
+    </filter> 
+  </appender>
+
+  <root level="INFO">
+    <springProfile name="ci, dev, sit, uat, str, pre, prd">
+      <appender-ref ref="FILE"/>
+      <appender-ref ref="ERROR-FILE"/>
+    </springProfile>
+    <springProfile name="ci, dev">
+      <appender-ref ref="STDOUT"/>
+    </springProfile>
+  </root>
+  
+</configuration>

@@ -1,0 +1,55 @@
+spring :
+  application :
+    name : TST
+  #see rabbitProperties
+  rabbitmq :
+    #host :  192.168.1.38
+    #port : 5672
+    addresses : 219.135.153.39:5672
+    virtualHost : /lemon
+    username : rabbitmq
+    password : Rabbitmq123
+    requestedHeartbeat : 10
+    publisherConfirms : true
+    publisherReturns : true
+    connectionTimeout : 10000
+    cache:
+      channel :
+        size : 5
+    listener :
+      concurrency : 1
+      maxConcurrency : 5
+      idleEventInterval : 60000
+      prefetch : 10
+      transactionSize : 10
+  cloud :
+    stream :
+      defaultBinder : rabbit
+      bindings :
+        input :
+          destination : ${spring.application.name}
+          group : ${spring.application.name}
+          consumer :
+            enable : false
+            concurrency : 1
+            maxConcurrency : 5
+            maxAttempts : 1
+            durableSubscription : true
+            prefetch : 10
+            txSize : 10
+          producer :
+            deliveryMode : PERSISTENT
+        output :
+          enable : true
+          destination : ${spring.application.name}
+        output1 :
+          enable : true
+          destination : output1-test
+          
+server :
+  port : 8888
+  
+lemon :
+  locale :
+    defaultLocale : zh_cn
+    supportLocales : zh_cn,en_us

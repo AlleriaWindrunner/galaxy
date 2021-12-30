@@ -1,0 +1,16 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.springframework:spring-webmvc")
+    optional("javax.servlet:javax.servlet-api")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+    exclude('config/')
+}

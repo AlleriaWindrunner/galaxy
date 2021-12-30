@@ -1,0 +1,24 @@
+spring :
+  cloud :
+    config :
+      label : master
+      server :
+        git :
+          clone-on-start : true
+          uri : git@172.29.94.11:middleground/configcenter/cmpay-config-repo.git
+          searchPaths : /{application}
+eureka :
+  instance :
+    metadata-map :
+      zone: sifangping
+    lease-renewal-interval-in-seconds : 10
+    lease-expiration-duration-in-seconds : 30
+  client :
+    healthcheck :
+      enabled : true
+    region : css
+    availability-zones :
+      css : sifangping,hexi
+    serviceUrl :
+      sifangping : http://172.29.63.11:9002/eureka/,http://172.29.63.12:9002/eureka/,http://172.29.63.13:9002/eureka/
+      hexi : http://172.24.24.83:9002/eureka/,http://172.24.24.84:9002/eureka/,http://172.24.24.85:9002/eureka/

@@ -1,0 +1,4 @@
+dependencies {
+    optional project(":lemon-entry-point:lemon-entry-point-generic")
+    optional("org.springframework:spring-web")
+}

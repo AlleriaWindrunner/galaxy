@@ -1,0 +1,5 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.galaxy.lemonframework.entrypoint.EntryPointEnvironmentPostProcessor
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.galaxy.lemonframework.entrypoint.autoconfigure.EntryPointAutoConfiguration

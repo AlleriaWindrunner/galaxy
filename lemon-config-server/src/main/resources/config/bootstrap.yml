@@ -1,0 +1,33 @@
+spring :
+  application :
+    name : config-server
+server :
+  port : 9000
+logging :
+  config : classpath:config/logback-spring.xml
+
+eureka :
+  instance :
+    preferIpAddress : true
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: lemon
+    password: lemon@cmpay
+
+encrypt:
+  keyStore:
+    location: file:${HOME}/cer/configserver.jks
+    password: lemon@cmpay
+    alias: configKey
+    secret: lemon@cmpay
+
+endpoints :
+  shutdown :
+    enabled : true
+    sensitive : false
+  metrics :
+    enabled : true
+    sensitive : false

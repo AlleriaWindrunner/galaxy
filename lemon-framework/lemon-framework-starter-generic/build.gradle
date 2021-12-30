@@ -1,0 +1,29 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-validation")
+    compile project(":lemon-framework:lemon-framework-datasource-dynamic")
+    compile project(":lemon-framework:lemon-framework-idgen")
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-mybatis")
+    compile project(":lemon-framework:lemon-framework-web")
+    compile project(":lemon-framework:lemon-framework-schedule")
+    compile project(":lemon-framework:lemon-framework-actuator")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")//cache
+    compile project(":lemon-framework:lemon-framework-jedis-extension")
+    compile project(":lemon-framework:lemon-framework-jackson")
+    compile project(":lemon-framework:lemon-framework-webmvc")
+    compile("org.ehcache:ehcache")  //cache
+    compile("com.alibaba:druid")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+}

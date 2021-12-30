@@ -1,0 +1,7 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-starter-xss")
+    compile project(":lemon-framework:lemon-framework-starter-security")
+    compile project(":lemon-framework:lemon-framework-starter-session")
+    compile project(":lemon-entry-point:lemon-entry-point-generic")
+    compile project(":lemon-entry-point:lemon-entry-point-autoconfigure")
+}

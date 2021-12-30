@@ -1,0 +1,17 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+
+    optional("org.springframework.cloud:spring-cloud-netflix-core")
+    optional("com.netflix.ribbon:ribbon-eureka")
+    optional("javax.servlet:javax.servlet-api")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

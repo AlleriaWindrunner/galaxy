@@ -1,0 +1,20 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-context")
+    compile("org.springframework:spring-web")
+    compile("org.springframework:spring-webmvc")
+    compile("org.hibernate:hibernate-validator")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    optional("javax.servlet:javax.servlet-api")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  // "Class-Path": '. config/'
+                  )
+    }
+//    exclude('config/')
+}

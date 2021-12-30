@@ -1,0 +1,17 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-security")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    //optional("javax.servlet:javax.servlet-api")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+                //    "Class-Path": '. config/'
+        )
+    }
+    exclude('config/')
+}

@@ -1,0 +1,1 @@
+provides: lemon-framework-autoconfigure, lemon-framework-cumulative, spring-boot-starter-data-redis

@@ -1,0 +1,16 @@
+eureka :
+  enviroment : uat
+  client :
+    register-with-eureka : true
+    fetch-registry : true
+    healthcheck :
+      enabled : true
+    region : css
+    availability-zones :
+      css : zone1,zone2
+    serviceUrl :
+      zone1 : http://172.16.49.78:9002/eureka/
+      zone2 : http://172.16.48.156:9002/eureka/
+  server :
+    enable-self-preservation : false
+    eviction-interval-timer-in-ms: 10000

@@ -1,0 +1,15 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework:spring-web")
+    optional("javax.servlet:javax.servlet-api")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

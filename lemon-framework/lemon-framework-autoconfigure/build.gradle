@@ -1,0 +1,43 @@
+dependencies {
+    optional project(":lemon-common")
+    optional project(":lemon-framework:lemon-framework-logger-adapter")
+    optional project(":lemon-framework:lemon-framework-core")
+    optional project(":lemon-framework:lemon-framework-context")
+    optional project(":lemon-framework:lemon-framework-validation")
+    optional project(":lemon-framework:lemon-framework-datasource-dynamic")
+    optional project(":lemon-framework:lemon-framework-idgen")
+    optional project(":lemon-framework:lemon-framework-mybatis")
+    optional project(":lemon-framework:lemon-framework-dao")
+    optional project(":lemon-framework:lemon-framework-stream")
+    optional project(":lemon-framework:lemon-framework-web")
+    optional project(":lemon-framework:lemon-framework-webmvc")
+    optional project(":lemon-framework:lemon-framework-schedule")
+    optional project(":lemon-framework:lemon-framework-feign")
+    optional project(":lemon-framework:lemon-framework-lock")
+    optional project(":lemon-framework:lemon-framework-cumulative")
+    optional project(":lemon-framework:lemon-framework-random")
+    optional project(":lemon-framework:lemon-framework-hystrix")
+    optional project(":lemon-framework:lemon-framework-security")
+    optional project(":lemon-framework:lemon-framework-security-refresh")
+    optional project(":lemon-framework:lemon-framework-session")
+    optional project(":lemon-framework:lemon-framework-signature")
+    optional project(":lemon-framework:lemon-framework-jedis-extension")
+    optional project(":lemon-framework:lemon-framework-xss")
+    optional project(":lemon-framework:lemon-framework-jackson")
+    optional project(":lemon-framework:lemon-framework-gray")
+    optional("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    optional("com.alibaba:druid:1.0.20")
+    optional("org.redisson:redisson")
+    optional("io.github.openfeign:feign-httpclient")
+    optional("com.netflix.eureka:eureka-client")
+    optional("org.springframework.cloud:spring-cloud-netflix-eureka-client")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+}

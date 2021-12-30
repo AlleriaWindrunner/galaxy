@@ -1,0 +1,16 @@
+eureka :
+  enviroment : pre
+  client :
+    register-with-eureka : true
+    fetch-registry : true
+    healthcheck :
+      enabled : true
+    region : css
+    availability-zones :
+      css : sifangping,hexi
+    serviceUrl :
+      sifangping : http://172.29.51.38:9002/eureka/
+      hexi : http://172.29.51.29:9002/eureka/
+  server :
+    enable-self-preservation : false
+    eviction-interval-timer-in-ms: 10000

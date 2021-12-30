@@ -1,0 +1,24 @@
+spring :
+  cloud :
+    config :
+      label : master
+      server :
+        git :
+          clone-on-start : true
+          uri : git@172.16.50.222:middleground/configcenter/cmpay-config-repo.git
+          searchPaths : /{application}
+eureka :
+  instance :
+    metadata-map :
+      zone: zone1
+    lease-renewal-interval-in-seconds : 10
+    lease-expiration-duration-in-seconds : 30
+  client :
+    healthcheck :
+      enabled : true
+    region : css
+    availability-zones :
+      css : zone1,zone2
+    serviceUrl :
+      zone1 : http://172.16.49.78:9002/eureka/
+      zone2 : http://172.16.48.156:9002/eureka/

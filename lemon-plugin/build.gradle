@@ -1,0 +1,8 @@
+apply plugin: 'groovy'
+
+dependencies {
+    //compile 'org.codehaus.groovy:groovy-all:2.4.13'
+    compile localGroovy()
+    compile gradleApi()
+    compile project(":lemon-generator")
+}

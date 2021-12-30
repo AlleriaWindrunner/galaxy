@@ -1,0 +1,33 @@
+apply plugin: 'application'
+mainClassName = 'com.galaxy.lemon.Application'
+dependencies {
+//    compile project(":lemon-common")
+//    compile project(":lemon-framework:lemon-framework-core")
+//    compile project(":lemon-framework:lemon-framework-actuator")
+//    compile project(":lemon-framework:lemon-framework-validation")
+//    compile project(":lemon-framework:lemon-framework-redis")
+//    compile project(":lemon-framework:lemon-framework-idgen")
+//    compile project(":lemon-framework:lemon-framework-dao")
+//    compile project(":lemon-framework:lemon-framework-web")
+//    compile project(":lemon-framework:lemon-framework-cache")
+//    compile project(":lemon-framework:lemon-framework-schedule")
+//    compile project(":lemon-framework:lemon-framework-alerting")
+//    compile project(":lemon-framework:lemon-framework-feign")
+//    compile project(":lemon-framework:lemon-framework-datasource-dynamic")
+//    compile project(":lemon-framework:lemon-framework-mybatis")
+//    compile project(":lemon-framework:lemon-framework-stream")
+//    compile project(":lemon-framework:lemon-framework-actuator")
+//    compile project(":lemon-framework:lemon-framework-autoconfigure")
+//    compile project(":lemon-framework:lemon-framework-starter")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                   "Class-Path": '. config/'
+                  )
+    }
+    exclude('config/')
+}

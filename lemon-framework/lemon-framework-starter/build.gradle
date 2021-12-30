@@ -1,0 +1,35 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-validation")
+    compile project(":lemon-framework:lemon-framework-datasource-dynamic")
+    compile project(":lemon-framework:lemon-framework-idgen")
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-mybatis")
+    //compile project(":lemon-framework:lemon-framework-dao")
+    compile project(":lemon-framework:lemon-framework-web")
+    //compile project(":lemon-framework:lemon-framework-alerting")
+    compile project(":lemon-framework:lemon-framework-schedule")
+    compile project(":lemon-framework:lemon-framework-actuator")
+    compile project(":lemon-framework:lemon-framework-feign")
+    compile project(":lemon-framework:lemon-framework-jedis-extension")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")//cache
+    compile("javax.cache:cache-api")
+    compile("org.ehcache:ehcache")  //cache
+    compile("com.alibaba:druid")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    compile("mysql:mysql-connector-java")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("io.github.openfeign:feign-httpclient")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+}

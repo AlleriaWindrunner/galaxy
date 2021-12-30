@@ -1,0 +1,7 @@
+# Define security
+security:
+  basic:
+    enabled: false
+  user:
+    password: password
+    

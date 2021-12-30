@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    //optional("org.ehcache:ehcache")
+    //compile("javax.cache:cache-api")
+    //compile("org.springframework.boot:spring-boot-starter-cache")
+}

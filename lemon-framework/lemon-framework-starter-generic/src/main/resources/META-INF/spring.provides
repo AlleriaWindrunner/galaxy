@@ -1,0 +1,1 @@
+provides: lemon-common, lemon-framework-common, lemon-framework-validation, lemon-framework-datasource-dynamic, lemon-framework-datasource-druid, lemon-framework-idgen, lemon-framework-mybatis, lemon-framework-transaction, spring-boot-starter-data-redis, ehcache, lemon-framework-core, lemon-framework-schedule, lemon-framework-actuator

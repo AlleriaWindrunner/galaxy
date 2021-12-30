@@ -1,0 +1,114 @@
+buildscript {
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public/" }
+        maven { url "http://your/path/repository/maven-public/" }
+    }
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+        springCloudVersion = 'Edgware.SR1'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+       // classpath("io.spring.gradle:dependency-management-plugin:1.0.1.RELEASE")
+    }
+}
+
+subprojects{
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'maven-publish'
+
+    version = '1.0.0'
+    group = 'com.galaxy'
+    
+    sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
+    bootRepackage {
+        enabled = false
+    }
+    
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public/" }
+        maven { url "http://8.134.61.72:8081/repository/maven-public/" }
+    }
+
+    dependencyManagement {
+	    imports {
+            //mavenBom 'com.cmpay:lemon-framework-dependencies:1.0.0'
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	  	}
+    }
+    
+    dependencies {
+	    testCompile("org.springframework.boot:spring-boot-starter-test")
+	}
+
+    //打包源代码
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    
+    configurations {
+        optional
+        compile.extendsFrom optional
+    }
+    
+    publishing {
+        publications {
+            maven( MavenPublication ) {
+                from components.java
+                pom.withXml {
+                    asNode().dependencies.dependency.findAll { xmlDep ->
+                        // mark optional dependencies
+                        if ( project.configurations.optional.allDependencies.findAll { dep ->
+                            xmlDep.groupId.text() == dep.group && xmlDep.artifactId.text() == dep.name
+                        } ) {
+                            def xmlOptional = xmlDep.optional[ 0 ];
+                            if ( !xmlOptional ) {
+                                xmlOptional = xmlDep.appendNode( 'optional' )
+                            }
+                            xmlOptional.value = 'true';
+                        }
+                        // fix maven-publish issue when all maven dependencies are placed into runtime scope
+                        if ( project.configurations.compile.allDependencies.findAll { dep ->
+                            xmlDep.groupId.text() == dep.group && xmlDep.artifactId.text() == dep.name
+                        } ) {
+                            def xmlScope = xmlDep.scope[ 0 ];
+                            if ( !xmlScope ) {
+                                xmlScope = xmlDep.appendNode( 'scope' )
+                            }
+                            xmlScope.value = 'compile';
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+    artifacts {
+        archives jar
+        archives sourcesJar
+    }
+}
+
+configure(subprojects.findAll {it.name.matches('(?!\\S*(-bus|-server|-test|-uaa))\\S*')}) {
+    println('upload archives project '+ project.getName() )
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                snapshotRepository(url: "http://your/path/repository/maven-snapshots/") {
+                    authentication(userName:'admin', password:'eleven19910408')
+                }
+                repository(url: "http://your/path/repository/maven-releases/") {
+                    authentication(userName:'admin', password:'eleven19910408')
+                }
+            }
+        }
+    }
+}
+description = 'lemon framework'

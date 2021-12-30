@@ -1,0 +1,37 @@
+1. jdk安装目录 /usr/local/jdk1.8.0_20/
+2. 替换 /usr/local/jdk1.8.0_20/jre/lib/security下面jar包 US_export_policy.jar local_policy.jar
+3. 新建config-server用户，创建并切换到$HOME/cer目录，生成证书。执行如下命令，密码需要休息
+keytool -genkeypair -alias configKey -keyalg RSA \
+  -dname "CN=Config Server,OU=Unit,O=Organization,L=City,S=State,C=US" \
+  -keypass lemon@cmpay -keystore configserver.jks -storepass lemon@cmpay
+
+4.环境变量配置,追加到.bashrc
+export JAVA_HOME=/usr/local/jdk1.8.0_20
+export LEMON_ENV=prd
+#证书密码
+export ENCRYPT_KEYSTORE_PASSWORD=lemon@cmpay
+export ENCRYPT_KEYSTORE_SECRET=lemon@cmpay
+#访问密码，对应应用服务器的SPRING_CLOUD_CONFIG_USERNAME SPRING_CLOUD_CONFIG_PASSWORD
+export SECURITY_USER_NAME=lemon
+export SECURITY_USER_PASSWORD=lemon@cmpay
+
+5. 生成git访问ssh-key，不要设置密码，直接回车确认
+执行命令: ssh-keygen -t rsa
+执行命令: ssh-keyscan -t rsa 172.29.94.11 >> ~/.ssh/kown_hosts
+
+6.添加公钥.ssh/id_rsa.pub的git服务器
+
+7. 新建bin目录放入启动脚本start.sh和encrypt.sh脚本
+8. 新建lib目录放入lemon-config-server*.jar
+
+注意：以上操作说明中的jdk环境变量，证书密码，需要运维保密生成
+
+9. 替换git服务器中的明文：
+如明文为 password : foobared
+使用加密脚本 bin/encrypt.sh foobared  生成密文
+替换原文为(密码需要单号) password : '{cipher}生成的密文'
+
+10.另外的config-server全量拷贝第一台机器的 ${HOME}/.bashrc  ${HOME}/.ssh  ${HOME}/bin  ${HOME}/cer  ${HOME}/lib 目录下的文件
+
+
+

@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-security")
+    compile project(":lemon-framework:lemon-framework-security-refresh")
+}

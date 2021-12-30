@@ -1,0 +1,19 @@
+logging :
+  config : classpath:config/logback-spring.xml
+  level :
+    com.galaxy.lemon.framework.dao : DEBUG
+    performanceMetricsPrinter : INFO
+
+lemon :
+  idgen :
+    delta :
+      default : 500
+      MSGID_ : 1000
+      REQUESTID_ : 1000
+    max-value :
+      MSGID_ : 999999999
+      REQUESTID_ : 999999999
+  #default locale for application
+  locale :
+    defaultLocale : zh_cn
+    supportLocales : zh_cn

@@ -1,0 +1,1 @@
+provides: lemon-common, lemon-framework-core, lemon-framework-idgen, lemon-framework-actuator, lemon-framework-feign, lemon-framework-gray, spring-cloud-starter-eureka, lemon-gateway-autoconfigure, lemon-gateway-core

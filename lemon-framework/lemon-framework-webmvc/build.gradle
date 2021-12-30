@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-jackson")
+    compile("org.springframework:spring-webmvc")
+    optional("javax.servlet:javax.servlet-api")
+}

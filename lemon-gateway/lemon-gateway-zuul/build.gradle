@@ -1,0 +1,17 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-context")
+    compile project(":lemon-framework:lemon-framework-signature")
+    compile project(":lemon-gateway:lemon-gateway-core")
+    compile("org.springframework.cloud:spring-cloud-starter-zuul")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+               //    "Class-Path": '. config/'
+                  )
+    }
+    exclude('config/')
+}

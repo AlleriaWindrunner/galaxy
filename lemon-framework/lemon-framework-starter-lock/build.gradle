@@ -1,0 +1,15 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-lock")
+    compile("io.netty:netty-transport-native-epoll:4.1.13.Final")   //fixed netty version for ribbon
+    compile("io.netty:netty-codec-http:4.1.13.Final")   //fixed netty version for ribbon
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

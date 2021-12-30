@@ -1,0 +1,63 @@
+//apply plugin: 'application'
+//mainClassName = 'org.mybatis.generator.api.ShellRunner'
+dependencies {
+    //compile project(":lemon-framework:lemon-framework-core")
+    compile("org.apache.ant:ant:1.10.1")
+    compile("org.mybatis:mybatis:3.4.4")
+    compile("log4j:log4j:1.2.17")
+    compile("mysql:mysql-connector-java:5.1.25")
+    compile("tk.mybatis:mapper:3.4.0")
+    //compile("com.oracle:ojdbc6")
+}
+
+jar {
+    manifest {
+        attributes(
+            "Main-Class": "org.mybatis.generator.api.ShellRunner",
+             "Implementation-Title": "Gradle",
+             "Implementation-Version": "${version}",
+             ///"Class-Path": '. config/ '+configurations.compile.collect { "libs/${it.name}" }.join(' ')
+         )
+    }
+    ///into('libs') {
+    ///    from configurations.runtime
+    ///}
+    from {
+        configurations.runtime.collect { zipTree(it) }
+    }
+    from('src/main/java') {
+        include '**/*'
+        exclude '**/*.java'
+    }
+    exclude('config/')
+    exclude('generatorConfig.xml')
+}
+
+task copyJar(type: Copy) {
+    from configurations.runtime
+    into('build/libs')
+}
+
+task clearTarget(type:Delete){
+   delete 'build/target'
+}
+
+task release(type: Copy,dependsOn: [clearTarget,build,copyJar]) {
+    from('build/libs') {
+        include '*.jar'
+        exclude '*-sources.jar'
+    }
+    from('src/main/resources') {
+        include 'config/*'
+    }
+    into ('build/target')
+
+    into('bin') {
+        from 'shell'
+    }
+}
+
+task dist(type: Zip,dependsOn: [release]) {
+    from ('build/target/') {
+    }
+}

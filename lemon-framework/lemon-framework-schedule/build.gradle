@@ -1,0 +1,3 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+}

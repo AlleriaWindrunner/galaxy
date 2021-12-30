@@ -1,0 +1,18 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-redis")
+    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
+    compile("org.springframework.cloud:spring-cloud-starter-security")
+    compile("org.springframework.security:spring-security-jwt")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                   "Class-Path": '. config/'
+                  )
+    }
+    exclude('config/')
+}

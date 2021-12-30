@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.galaxy.lemon.gateway.autoconfigure.core.CoreAutoConfiguration,\
+com.galaxy.lemon.gateway.autoconfigure.zuul.ZuulAutoConfiguration,\
+com.galaxy.lemon.gateway.autoconfigure.feign.GatewayFeignAutoConfiguration

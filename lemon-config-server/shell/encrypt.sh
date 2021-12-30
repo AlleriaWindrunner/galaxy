@@ -1,0 +1,1 @@
+curl -i --user $SECURITY_USER_NAME:$SECURITY_USER_PASSWORD http://127.0.0.1:9000/decrypt -d $1

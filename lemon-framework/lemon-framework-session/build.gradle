@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.springframework.session:spring-session")
+    optional("javax.servlet:javax.servlet-api")
+}

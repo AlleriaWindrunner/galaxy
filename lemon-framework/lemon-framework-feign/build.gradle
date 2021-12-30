@@ -1,0 +1,14 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-validation")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+                  )
+    }
+}

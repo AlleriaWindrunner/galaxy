@@ -1,0 +1,7 @@
+# Application Listeners
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.galaxy.lemon.framework.actuator.autoconfigure.EndpointAutoConfiguration
+
+org.springframework.boot.actuate.autoconfigure.ManagementContextConfiguration=\
+com.galaxy.lemon.framework.actuator.autoconfigure.EndpointWebMvcManagementContextConfiguration

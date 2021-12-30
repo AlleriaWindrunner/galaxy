@@ -1,0 +1,8 @@
+dependencies {
+    compile ("com.101tec:zkclient:0.9") {
+        exclude module: 'slf4j-log4j12'
+        exclude module: 'log4j'
+    }
+    compile ("org.springframework:spring-context")
+    compile ("org.springframework.boot:spring-boot")
+}

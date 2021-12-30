@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-idgen")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    optional("org.springframework:spring-tx")
+}

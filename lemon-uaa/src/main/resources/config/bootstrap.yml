@@ -1,0 +1,18 @@
+spring :
+  application :
+    name : uaa
+    
+server :
+  port : 9300
+  context-path: /uaa
+  use-forward-headers: false
+  
+logging :
+  config : classpath:config/logback-spring.xml
+  level :
+    root : DEBUG
+    
+eureka :
+  client :
+    serviceUrl :
+      defaultZone : http://localhost:9002/eureka/

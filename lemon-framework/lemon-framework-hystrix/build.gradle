@@ -1,0 +1,14 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.springframework.cloud:spring-cloud-starter-hystrix")
+//    compile("org.springframework.cloud:spring-cloud-starter-sleuth")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

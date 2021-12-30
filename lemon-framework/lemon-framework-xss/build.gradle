@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-core")
+    compile("org.springframework:spring-webmvc")
+    compile("com.fasterxml.jackson.core:jackson-databind")
+    optional("javax.servlet:javax.servlet-api")
+}

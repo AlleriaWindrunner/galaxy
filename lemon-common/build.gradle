@@ -1,0 +1,10 @@
+dependencies {
+	compile("org.apache.commons:commons-lang3:3.4")
+	compile("commons-io:commons-io:2.5")
+	compile("commons-codec:commons-codec:1.10")
+	compile("commons-beanutils:commons-beanutils")
+	compile("org.javassist:javassist")
+	compile("org.slf4j:slf4j-api")
+	compile("org.springframework:spring-context")
+}
+

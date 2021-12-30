@@ -1,0 +1,4 @@
+com.galaxy.lemon.framework.springcloud.fegin.error.ClientExceptionConverter
+com.galaxy.lemon.framework.springcloud.fegin.error.EncodeExceptionConverter
+com.galaxy.lemon.framework.springcloud.fegin.error.FeignExceptionConverter
+com.galaxy.lemon.framework.springcloud.fegin.error.RetryableExceptionConverter

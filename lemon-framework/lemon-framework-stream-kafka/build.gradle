@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":lemon-common")
+    compile("org.springframework.cloud:spring-cloud-starter-stream-kafka")
+    compile("org.springframework.kafka:spring-kafka")
+}

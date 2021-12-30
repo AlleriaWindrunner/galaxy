@@ -1,0 +1,17 @@
+dependencies {
+    compile project(":lemon-common")
+    compile("org.springframework.boot:spring-boot-starter")
+    optional('javax.validation:validation-api')
+    optional('io.swagger:swagger-annotations:1.5.13')
+    optional('com.fasterxml.jackson.core:jackson-annotations')
+    optional("org.projectlombok:lombok")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

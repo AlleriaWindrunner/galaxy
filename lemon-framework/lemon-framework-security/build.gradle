@@ -1,0 +1,15 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-context")
+    compile("org.springframework.cloud:spring-cloud-starter-security")
+}
+
+jar {
+    manifest {
+        attributes(
+                   "Implementation-Title": "Gradle",
+                   "Implementation-Version": "${version}",
+               //    "Class-Path": '. config/'
+                  )
+    }
+    exclude('config/')
+}

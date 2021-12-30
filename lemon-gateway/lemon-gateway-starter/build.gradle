@@ -1,0 +1,27 @@
+dependencies {
+    compile project(":lemon-framework:lemon-framework-autoconfigure")
+    compile project(":lemon-framework:lemon-framework-context")
+    compile project(":lemon-framework:lemon-framework-validation")
+    compile project(":lemon-framework:lemon-framework-idgen")
+    compile project(":lemon-framework:lemon-framework-actuator")
+    compile project(":lemon-framework:lemon-framework-feign")
+    compile project(":lemon-framework:lemon-framework-web")
+    compile project(":lemon-gateway:lemon-gateway-autoconfigure")
+    compile project(":lemon-gateway:lemon-gateway-core")
+    compile project(":lemon-gateway:lemon-gateway-zuul")
+    compile project(":lemon-framework:lemon-framework-jedis-extension")
+    compile project(":lemon-framework:lemon-framework-jackson")
+    compile project(":lemon-framework:lemon-framework-gray")
+    compile("io.github.openfeign:feign-httpclient")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "Gradle",
+                "Implementation-Version": "${version}",
+        )
+    }
+}

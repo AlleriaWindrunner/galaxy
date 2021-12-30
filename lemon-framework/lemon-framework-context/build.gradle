@@ -1,0 +1,7 @@
+dependencies {
+    compile project(":lemon-common")
+    compile project(":lemon-framework:lemon-framework-core")
+    compile project(":lemon-framework:lemon-framework-logger-adapter")
+    compile project(":lemon-framework:lemon-framework-jackson")
+    optional("javax.servlet:javax.servlet-api")
+}
