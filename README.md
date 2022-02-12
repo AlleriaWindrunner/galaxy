@@ -3,11 +3,11 @@ Micro-Services Framework Base Spring Cloud
 
 ## Spring Cloud 核心组件概览图
 
-![Spring Cloud 核心组件概览图](https://github.com/AlleriaWindrunner/galaxy/blob/master/doc/image/component%20overview%20diagram%20of%20galaxy.png)
+![Spring Cloud 核心组件概览图](https://github.com/AlleriaWindrunner/galaxy/blob/master/doc/image/component%20overview%20diagram%20of%20spring%20cloud.png)
 
 ## Galaxy 核心组件概览图
 
-![Galaxy 核心组件概览图](https://github.com/AlleriaWindrunner/galaxy/blob/master/doc/image/component%20overview%20diagram%20of%20spring%20cloud.png)
+![Galaxy 核心组件概览图](https://github.com/AlleriaWindrunner/galaxy/blob/master/doc/image/component%20overview%20diagram%20of%20galaxy.png)
 
 ## 基本规范
 
