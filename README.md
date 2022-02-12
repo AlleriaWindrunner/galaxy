@@ -7,7 +7,7 @@ Micro-Services Framework Base Spring Cloud
 
 ## Galaxy框架核心组件概览图
 
-![框架组件概览图](doc/image/框架组件概览图.png)
+![框架组件概览图](https://github.com/AlleriaWindrunner/galaxy/blob/master/doc/image/%E6%A1%86%E6%9E%B6%E7%BB%84%E4%BB%B6%E6%A6%82%E8%A7%88%E5%9B%BE.png)
 
 ## 基本规范
 
