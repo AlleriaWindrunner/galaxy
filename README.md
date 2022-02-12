@@ -3,11 +3,11 @@ Micro-Services Framework Base Spring Cloud
 
 ## Spring Cloud 核心组件概览图
 
-![avator](doc/image/spring cloud组件概览.png)
+![spring cloud组件概览](doc/image/spring cloud组件概览.png)
 
 ## Galaxy框架核心组件概览图
 
-![avator](doc/image/框架组件概览图.png)
+![框架组件概览图](doc/image/框架组件概览图.png)
 
 ## 基本规范
 
