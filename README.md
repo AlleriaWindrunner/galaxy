@@ -285,7 +285,7 @@ public class DesensitizationDTO extends GenericDTO<NoBody>  {
 	"userName": "e**",
 	"idCard": "430***********4011",
 	"bankNo": "622555******4111",
-	"email": "y******@hisuntech.com",
+	"email": "e******@hisuntech.com",
 	"address": "湖南省长沙市******",
 	"cnapsCode": "30**********",
 	"mblNo": "186****5009",
