@@ -769,7 +769,7 @@ lemon :
       database : 0
       host : ${redis.host:192.168.3.39}
       port : 6379
-      password : ${redis.password:Hisunpay2017}
+      password : ${redis.password:123456}
       pool :
         #连接池最大连接数（使用负值表示没有限制）
         max-active : 8
